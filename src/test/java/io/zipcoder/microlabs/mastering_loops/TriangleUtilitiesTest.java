@@ -14,7 +14,7 @@ public class TriangleUtilitiesTest {
         Assert.assertEquals(expected, actual);
     }
 
-
+//dynamic
     @Test
     public void getTriangleTest1() {
         String expected =
