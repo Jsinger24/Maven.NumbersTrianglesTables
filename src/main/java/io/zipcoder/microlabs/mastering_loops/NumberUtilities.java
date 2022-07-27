@@ -26,27 +26,29 @@ public class NumberUtilities {
 
     public static String getSquareNumbers(int start, int stop, int step) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = start; i <= stop; i += step){
-            stringBuilder.append(i);
+        for (int i = start; i < stop; i += step){
+            stringBuilder.append(i * i);
         }
 
         return stringBuilder.toString();
     }
 
     public static String getRange(int stop) {
-        StringBuilder stringBuilder = new StringBuilder();
-                for (int i = 0; i < stop -1; i++){
-                    stringBuilder.append(i);
-                }
-        return stringBuilder.toString();
+//        StringBuilder stringBuilder = new StringBuilder();
+//                for (int i = 0; i < stop -1; i++){
+//                    stringBuilder.append(i);
+//                }
+//        return stringBuilder.toString();
+        return getRange(0, stop, 1);
     }
 
     public static String getRange(int start, int stop) {
-        StringBuilder str = new StringBuilder();
-        for ( int i = start; i < stop; i++){
-            str.append(i);
-        }
-        return str.toString();
+//        StringBuilder str = new StringBuilder();
+//        for ( int i = start; i < stop; i++){
+//            str.append(i);
+//        }
+//        return str.toString();
+        return getRange(start, stop, 1);
     }
 
 
@@ -61,6 +63,17 @@ public class NumberUtilities {
 
 
     public static String getExponentiations(int start, int stop, int step, int exponent) {
-        return null;
+        String res = "";
+
+        int calculatedValue;
+        for(int i = start; i < stop; i += step){
+            calculatedValue = i;
+            for(int j = 1; j < exponent; j++){
+                calculatedValue *= i;
+            }
+            res += calculatedValue;
+        }
+        return res;
     }
+
 }
